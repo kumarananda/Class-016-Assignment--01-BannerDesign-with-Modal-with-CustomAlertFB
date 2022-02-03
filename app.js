@@ -1,7 +1,13 @@
 
+// get elements
 const applyBtn = document.getElementById('applyButton');
 const modal = document.querySelector('.saha-modal');
-const modalClose = document.getElementById('modalClose');
+const modalClose = document.querySelector('.modal-header .close');
+
+const sahaCustomAlert = document.querySelector('.saha-customAlertBox')
+const alertClose = document.querySelector('.alertHeader .close');
+const keepE = document.querySelector('#keepE');
+const discard = document.querySelector('#discard');
 
 
 applyBtn.addEventListener('click', function (e) {
@@ -9,15 +15,10 @@ applyBtn.addEventListener('click', function (e) {
     // modal.style.pointerEvents = 'painted';
     // modal.style.transform = 'translateY(0)';
     modal.classList.add('activeClass');
-
-
     
 });
 modalClose.addEventListener('click', function (e) {
-    // modal.style.opacity = 0;
-    // modal.style.pointerEvents = 'none';
-    // modal.style.transform = 'translateY(-100px)';
-    modal.classList.remove('activeClass');
+    sahaCustomAlert.classList.add('activeclear');
 
 });
 
@@ -27,4 +28,18 @@ modal.addEventListener('click', function (e) {
     if(e.target == this){
         modal.classList.remove('activeClass');
     }
-})
+    
+});
+alertClose.addEventListener('click', function (e) {
+    // sahaCustomAlert.style.display = 'none';
+    sahaCustomAlert.classList.remove('activeclear');
+});
+keepE.addEventListener('click', function (e) {
+    // sahaCustomAlert.style.display = 'none';
+    sahaCustomAlert.classList.remove('activeclear');
+});
+discard.addEventListener('click', function () {
+    sahaCustomAlert.classList.remove('activeclear');
+    modal.classList.remove('activeClass');
+});
+
